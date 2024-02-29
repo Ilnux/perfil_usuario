@@ -2,13 +2,13 @@ package org.prueba_tecnica.perfil_usuario.modelos;
 
 public class Usuario {
 
-    int id;
-    String nombres;
-    String apellidos;
-    String email;
-    String numero_telefono;
-    String ciudad;
-    String pais;
+    private int id;
+    private String nombres;
+    private String apellidos;
+    private String email;
+    private String numero_telefono;
+    private String ciudad;
+    private String pais;
 
 
     public int getId() {

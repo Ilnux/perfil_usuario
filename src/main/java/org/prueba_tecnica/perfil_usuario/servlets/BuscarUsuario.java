@@ -42,7 +42,7 @@ public class BuscarUsuario extends HttpServlet {
                     Usuario usuario = gson.fromJson(respuestaApi.toString(), Usuario.class);
 
                     request.setAttribute("usuario", usuario);
-                    request.getRequestDispatcher( "/WEB-INF/vistas/perfil.jsp").forward(request, response);
+                    request.getRequestDispatcher( "perfil.jsp").forward(request, response);
                 } catch (ServletException e) {
                     throw new RuntimeException(e);
                 }
