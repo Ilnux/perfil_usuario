@@ -49,17 +49,26 @@ public class CrearUsuario extends HttpServlet {
                 os.write(input, 0, input.length);
             }
 
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(conexion.getInputStream(), "utf-8"))) {
-                StringBuilder respuestaApi = new StringBuilder();
-                String responseLine = null;
-                while ((responseLine = br.readLine()) != null) {
-                    respuestaApi.append(responseLine.trim());
+
+            int responseCode = conexion.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
+
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conexion.getInputStream(), "utf-8"))) {
+                    StringBuilder respuestaApi = new StringBuilder();
+                    String responseLine = null;
+                    while ((responseLine = br.readLine()) != null) {
+                        respuestaApi.append(responseLine.trim());
+                    }
+
+                    usuario = gson.fromJson(String.valueOf(respuestaApi), Usuario.class);
+
+
+                    response.sendRedirect(request.getContextPath() + "/Buscar-usuario?id=" + usuario.getId());
                 }
 
-                usuario = gson.fromJson(String.valueOf(respuestaApi), Usuario.class);
-
-
-                response.sendRedirect(request.getContextPath() + "/Buscar-usuario?id=" + usuario.getId());
+            } else {
+                response.sendRedirect(request.getContextPath() + "/error.jsp");
+                System.out.println("Error al enviar la solicitud: Código de respuesta " + responseCode);
             }
 
         } catch (Exception e) {

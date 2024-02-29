@@ -48,6 +48,7 @@ public class BuscarUsuario extends HttpServlet {
                 }
             } else {
 
+                response.sendRedirect(request.getContextPath() + "/error.jsp");
                 response.sendError(conexion.getResponseCode(), "Error al buscar usuario");
             }
         } catch (IOException e) {
