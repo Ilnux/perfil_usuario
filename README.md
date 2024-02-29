@@ -36,7 +36,7 @@ Aplicación web Java que permite gestionar perfiles de usuario con una interfaz 
 
 
 
-![image](https://github.com/Ilnux/perfil_usuario/assets/46934658/5b817ca8-a8dd-430c-b150-ed9a1072848f)
+![image](https://github.com/Ilnux/perfil_usuario/assets/46934658/f827cb94-d637-43d0-8435-2c6dec883391)
 
 
 
