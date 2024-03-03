@@ -25,7 +25,11 @@ Aplicación web Java que permite gestionar perfiles de usuario con una interfaz 
 
 ## Ejecución:
 
- **Inicio:**
+**Servidor Tomcat instalado:**
+ 
+    -desplegar archivo perfil_usuario.war
+
+ **Servidor Tomcat instalado:**
  
     - Clonar el repositorio ubicado en https://github.com/Ilnux/perfil_usuario.git
     - Configurar Tomcat con el IDE que uses y ejecutar
